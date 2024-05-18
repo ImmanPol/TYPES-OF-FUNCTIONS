@@ -65,50 +65,73 @@ KToken is an ERC20-compliant token with added functionalities such as minting, b
 
 ## Usage
 
-Minting Tokens
+### Minting Tokens
 
 Only the contract owner can mint new tokens.
 
 ```javascript
 await kToken.connect(owner).mint(accountAddress, amount);
+```
 
-Burning Tokens
+### Burning Tokens
 
 Any token holder can burn their tokens.
-await kToken.connect(holder).burn(amount);
 
-Transferring Tokens
+```javascript
+await kToken.connect(holder).burn(amount);
+```
+
+### Transferring Tokens
 
 Standard ERC20 transfer function.
+
+```javascript
 await kToken.connect(sender).transfer(recipientAddress, amount);
+```
 
-Transfer From
+### Transfer From
 
-- Allows a spender to transfer tokens on behalf of the owner.
+Allows a spender to transfer tokens on behalf of the owner.
 
-Approve an allowance:
-await kToken.connect(owner).approve(spenderAddress, amount);
+1. **Approve an allowance:**
+    ```javascript
+    await kToken.connect(owner).approve(spenderAddress, amount);
+    ```
 
-Transfer tokens using transferFrom:
-await kToken.connect(spender).transferFrom(ownerAddress, recipientAddress, amount);
+2. **Transfer tokens using transferFrom:**
+    ```javascript
+    await kToken.connect(spender).transferFrom(ownerAddress, recipientAddress, amount);
+    ```
 
-Ownership Management
+## Ownership Management
 
-- Renounce Ownership
+### Renounce Ownership
+
 The current owner can renounce ownership, making the contract ownerless.
+
+```javascript
 await kToken.connect(currentOwner).renounceOwnership();
+```
 
-- Transfer Ownership
+### Transfer Ownership
+
 The current owner can transfer ownership to a new owner.
+
+```javascript
 await kToken.connect(currentOwner).transferOwnership(newOwnerAddress);
+```
 
-Acknowledgments
+## Acknowledgments
 
-OpenZeppelin for their secure and community-vetted contracts.
-Hardhat for their development environment and tools.
+- [OpenZeppelin](https://openzeppelin.com/) for their secure and community-vetted contracts.
+- [Hardhat](https://hardhat.org/) for their development environment and tools.
 
-Contributing
+## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. 
+
 Please make sure to update tests as appropriate.
 
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
