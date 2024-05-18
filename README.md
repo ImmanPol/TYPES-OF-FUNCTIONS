@@ -65,14 +65,14 @@ KToken is an ERC20-compliant token with added functionalities such as minting, b
 
 ## Usage
 
-### Minting Tokens
+Minting Tokens
 
 Only the contract owner can mint new tokens.
 
 ```javascript
 await kToken.connect(owner).mint(accountAddress, amount);
 
-### Burning Tokens
+###Burning Tokens
 
 Any token holder can burn their tokens.
 await kToken.connect(holder).burn(amount);
