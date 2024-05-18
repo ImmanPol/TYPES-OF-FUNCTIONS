@@ -72,17 +72,17 @@ Only the contract owner can mint new tokens.
 ```javascript
 await kToken.connect(owner).mint(accountAddress, amount);
 
-###Burning Tokens
+Burning Tokens
 
 Any token holder can burn their tokens.
 await kToken.connect(holder).burn(amount);
 
-### Transferring Tokens
+Transferring Tokens
 
 Standard ERC20 transfer function.
 await kToken.connect(sender).transfer(recipientAddress, amount);
 
-### Transfer From
+Transfer From
 
 - Allows a spender to transfer tokens on behalf of the owner.
 
@@ -92,7 +92,7 @@ await kToken.connect(owner).approve(spenderAddress, amount);
 Transfer tokens using transferFrom:
 await kToken.connect(spender).transferFrom(ownerAddress, recipientAddress, amount);
 
-### Ownership Management
+Ownership Management
 
 - Renounce Ownership
 The current owner can renounce ownership, making the contract ownerless.
@@ -102,12 +102,12 @@ await kToken.connect(currentOwner).renounceOwnership();
 The current owner can transfer ownership to a new owner.
 await kToken.connect(currentOwner).transferOwnership(newOwnerAddress);
 
-### Acknowledgments
+Acknowledgments
 
 OpenZeppelin for their secure and community-vetted contracts.
 Hardhat for their development environment and tools.
 
-### Contributing
+Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
